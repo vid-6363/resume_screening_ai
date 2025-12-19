@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Screening App</title>
+</head>
+<body>
+    <h1>Resume Screening App</h1>
+
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        <input type="file" name="resume" accept=".pdf" required><br><br>
+
+        <textarea name="job_description" rows="6" cols="50"
+        placeholder="Paste Job Description here" required></textarea><br><br>
+
+        <button type="submit">Analyze Resume</button>
+    </form>
+
+    {% if score %}
+        <h2>Match Score: {{ score }}%</h2>
+    {% endif %}
+</body>
+</html>
